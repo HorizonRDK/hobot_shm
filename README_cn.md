@@ -1,12 +1,12 @@
-English| [简体中文](./README_cn.md)
+[English](./README.md) | 简体中文
 
-# Feature Introduction
+# 功能介绍
 
-`hobot_shm` is used to configure the ROS2 zero-copy environment, including the [shm_fastdds.xml](./config/shm_fastdds.xml) configuration file and [shm_fastdds.launch.py](./launch/shm_fastdds.launch.py) configuration script.
+`hobot_shm`用于配置ROS2零拷贝环境，包含[shm_fastdds.xml](./config/shm_fastdds.xml)配置文件和[shm_fastdds.launch.py](./launch/shm_fastdds.launch.py)配置脚本。
 
-# Instructions
+# 使用方法
 
-To use, include the `hobot_shm.launch.py` configuration script in your launch startup script using the `IncludeLaunchDescription` command.
+在launch启动脚本中使用`IncludeLaunchDescription`命令包含`hobot_shm.launch.py`配置脚本即可。
 
 ```python
 from launch.actions import IncludeLaunchDescription
@@ -15,7 +15,7 @@ from ament_index_python import get_package_share_directory
 
 def generate_launch_description():
     return LaunchDescription([
-        # Start the zero-copy environment configuration node
+        # 启动零拷贝环境配置node
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 os.path.join(
