@@ -18,6 +18,12 @@ from launch import LaunchDescription
 from ament_index_python.packages import get_package_prefix
 
 def generate_launch_description():
+    if os.environ.get('RMW_FASTRTPS_USE_QOS_FROM_XML') == '1':
+        print("env of RMW_FASTRTPS_USE_QOS_FROM_XML is ", os.environ.get('RMW_FASTRTPS_USE_QOS_FROM_XML'), ", ignore env setting")
+        # The environment has been set
+        return LaunchDescription([
+        ])
+
     hobot_shm_config_file = os.path.join(
         get_package_prefix('hobot_shm'),
         "lib/hobot_shm/config/shm_fastdds.xml")
@@ -26,7 +32,8 @@ def generate_launch_description():
     os.environ.setdefault('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp')
     os.environ.setdefault('FASTRTPS_DEFAULT_PROFILES_FILE', hobot_shm_config_file)
     os.environ.setdefault('RMW_FASTRTPS_USE_QOS_FROM_XML', '1')
-    # print("RMW_FASTRTPS_USE_QOS_FROM_XML is ", os.getenv('RMW_FASTRTPS_USE_QOS_FROM_XML'))
+    print("Hobot shm pkg enables zero-copy with fastrtps profiles file:", os.getenv('FASTRTPS_DEFAULT_PROFILES_FILE'))
+    print("Hobot shm pkg sets RMW_FASTRTPS_USE_QOS_FROM_XML:", os.getenv('RMW_FASTRTPS_USE_QOS_FROM_XML'))
 
     return LaunchDescription([
-            ])
+    ])
