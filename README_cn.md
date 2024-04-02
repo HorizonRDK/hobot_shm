@@ -2,7 +2,7 @@
 
 # 功能介绍
 
-`hobot_shm`用于配置ROS2零拷贝环境，包含[shm_fastdds.xml](./config/shm_fastdds.xml)配置文件和[shm_fastdds.launch.py](./launch/shm_fastdds.launch.py)配置脚本。
+`hobot_shm`用于配置ROS2零拷贝环境，包含[shm_fastdds.xml](./config/shm_fastdds.xml)配置文件和[hobot_shm.launch.py](./launch/hobot_shm.launch.py)配置脚本。
 
 # 使用方法
 

@@ -2,7 +2,7 @@ English| [简体中文](./README_cn.md)
 
 # Feature Introduction
 
-`hobot_shm` is used to configure the ROS2 zero-copy environment, including the [shm_fastdds.xml](./config/shm_fastdds.xml) configuration file and [shm_fastdds.launch.py](./launch/shm_fastdds.launch.py) configuration script.
+`hobot_shm` is used to configure the ROS2 zero-copy environment, including the [shm_fastdds.xml](./config/shm_fastdds.xml) configuration file and [hobot_shm.launch.py](./launch/hobot_shm.launch.py) configuration script.
 
 # Instructions
 
