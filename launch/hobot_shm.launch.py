@@ -32,6 +32,9 @@ def generate_launch_description():
     os.environ.setdefault('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp')
     os.environ.setdefault('FASTRTPS_DEFAULT_PROFILES_FILE', hobot_shm_config_file)
     os.environ.setdefault('RMW_FASTRTPS_USE_QOS_FROM_XML', '1')
+    # Enable zero-copy
+    # https://docs.ros.org/en/humble/How-To-Guides/Configure-ZeroCopy-loaned-messages.html#subscriptions
+    os.environ.setdefault('ROS_DISABLE_LOANED_MESSAGES', '0')
     print("Hobot shm pkg enables zero-copy with fastrtps profiles file:", os.getenv('FASTRTPS_DEFAULT_PROFILES_FILE'))
     print("Hobot shm pkg sets RMW_FASTRTPS_USE_QOS_FROM_XML:", os.getenv('RMW_FASTRTPS_USE_QOS_FROM_XML'))
 
